@@ -2,4 +2,5 @@
 
 My solutions for [Advent of Code](https://adventofcode.com).
 
-Developed and tested in Python 3.5.
+2017, 2018: Developed and tested in Python 3.5.
+2020: Developed and tested in Rust 1.48.0.
