@@ -31,16 +31,12 @@ fn is_valid_year(value: &str, min: u16, max: u16) -> bool {
 fn is_valid_hgt(value: &str) -> bool {
     let num: u16 = value[..value.len() - 2].parse().unwrap();
 
-    if value.ends_with("cm") {        
-        if 150 <= num && num <= 193 {
-            return true;
-        }
+    if value.ends_with("cm") && 150 <= num && num <= 193 {
+        return true;
     }
 
-    if value.ends_with("in") {        
-        if 59 <= num && num <= 76 {
-            return true;
-        }
+    if value.ends_with("in") && 59 <= num && num <= 76 {
+        return true;
     }
 
     false
