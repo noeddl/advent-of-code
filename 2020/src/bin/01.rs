@@ -1,5 +1,5 @@
-use std::path::PathBuf;
 use aoc2020::file2vec;
+use std::path::PathBuf;
 
 fn get_result1(numbers: &[i32]) -> Option<i32> {
     for n1 in numbers {

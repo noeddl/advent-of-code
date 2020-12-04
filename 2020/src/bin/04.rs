@@ -1,13 +1,13 @@
+use regex::Regex;
 use std::collections::HashMap;
 use std::fs::read_to_string;
-use regex::Regex;
 
 fn has_all_fields(passport: &str) -> bool {
     let codes = vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-    
+
     for code in codes {
         if !passport.contains(code) {
-            return false
+            return false;
         }
     }
 
@@ -70,12 +70,12 @@ fn is_valid(entries: &HashMap<&str, &str>) -> bool {
     let pid = entries.get("pid").unwrap();
 
     is_valid_year(&byr, 1920, 2002)
-    && is_valid_year(&iyr, 2010, 2020)
-    && is_valid_year(&eyr, 2020, 2030)
-    && is_valid_hgt(&hgt)
-    && is_valid_hcl(&hcl)
-    && is_valid_ecl(&ecl)
-    && is_valid_pid(&pid)
+        && is_valid_year(&iyr, 2010, 2020)
+        && is_valid_year(&eyr, 2020, 2030)
+        && is_valid_hgt(&hgt)
+        && is_valid_hcl(&hcl)
+        && is_valid_ecl(&ecl)
+        && is_valid_pid(&pid)
 }
 
 fn count_valid1(passports: &str) -> u8 {
@@ -103,7 +103,6 @@ fn count_valid2(passports: &str) -> u8 {
 
         for field in fields {
             let k_v: Vec<_> = field.split(':').collect();
-            
             entries.insert(k_v[0], k_v[1]);
         }
 
