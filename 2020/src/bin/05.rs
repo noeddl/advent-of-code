@@ -1,5 +1,4 @@
 use aoc2020::file2vec;
-use std::path::PathBuf;
 
 fn decode(codes: &[char], min: u8, max: u8) -> (&[char], u8, u8) {
     if codes.is_empty() {
@@ -29,8 +28,7 @@ fn get_seat(codes: &[char]) -> (u8, u8) {
 }
 
 fn main() {
-    let path = PathBuf::from("inputs/05.txt");
-    let strings = file2vec(&path);
+    let strings = file2vec("inputs/05.txt");
 
     let ids: Vec<_> = strings
         .iter()

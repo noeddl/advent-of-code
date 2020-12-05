@@ -1,5 +1,4 @@
 use aoc2020::file2vec;
-use std::path::PathBuf;
 
 fn get_result1(numbers: &[i32]) -> Option<i32> {
     for n1 in numbers {
@@ -26,8 +25,7 @@ fn get_result2(numbers: &[i32]) -> Option<i32> {
 }
 
 fn main() {
-    let path = PathBuf::from("inputs/01.txt");
-    let strings = file2vec(&path);
+    let strings = file2vec("inputs/01.txt");
     let numbers: Vec<_> = strings.iter().map(|n| n.parse().unwrap()).collect();
 
     let result1 = get_result1(&numbers);
